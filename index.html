@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aconoya</title>
+    <style>
+        :root {
+            --primary-color: #0a0a0a;
+            --secondary-color: #1a1a1a;
+            --accent-color: #2a6496;
+            --cia-color: #52c6ff;
+            --text-color: #e0e0e0;
+            --spacing: 2rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {--accent-color
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing);
+        }
+        
+        header {
+            padding: var(--spacing) 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: var(--spacing);
+        }
+        
+        .mission {
+            max-width: 800px;
+            margin: var(--spacing) 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .mission:before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Tabs */
+        .tabs {
+            margin: var(--spacing) 0;
+        }
+        
+        .tab-nav {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .tab-btn.active {
+            opacity: 1;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 1rem 0;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .project {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .project p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            max-width: 90%;
+        }
+        
+        .project:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 40px 40px 0;
+            border-color: transparent var(--accent-color) transparent transparent;
+            opacity: 0.7;
+        }
+        
+        /* Contact */
+        .contact {
+            margin: var(--spacing) 0;
+            padding: var(--spacing) 0;
+            border-top: 1px solid #333;
+        }
+        
+        .contact-info {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            max-width: 500px;
+            position: relative;
+        }
+                       
+        .contact-info a {
+            color: var(--cia-color);            
+            opacity: 0.8;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-info a:hover {
+            opacity: 1;
+        }
+        
+        .contact-method {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-method:hover {
+            opacity: 1;
+        }
+        
+        .contact-method span {
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .cryptic-note {
+            margin-top: 2rem;
+            font-style: italic;
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .mission {
+                font-size: 1rem;
+            }
+            
+            .tab-nav {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: var(--spacing);
+            padding-top: var(--spacing);
+            border-top: 1px solid #333;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Aconoya</div>
+            <div class="tagline">El Futuro en tus manos</div>
+        </header>
+        
+        <section class="mission">
+            <p>En Aconoya tenemos la misión de llevar el poder de la IA a las masas, creando sistemas accesibles y poderosos que resuelvan las problemáticas de la comunidad, democratizando así el poder de la inteligencia.</p>
+            <p>Nuestro sueño: AGI en tu bolsillo.</p>
+        </section>
+        
+        <section class="tabs">
+            <div class="tab-nav">
+                <button class="tab-btn active" data-tab="projects">Proyectos</button>
+                <button class="tab-btn" data-tab="proposals">Investigaciones</button>
+            </div>
+            
+            <div id="projects" class="tab-content active">
+                <div class="project">
+                    <h3>NONOTZA</h3>
+                    <p>Serie de modelos de lenguaje dirigidos al mercado latinoamericano, con especial atención a los lenguajes locales de México, como el Nahuatl y enfocados en la portabilidad. Estado: Recolección de datos y pruebas iniciales.</p>
+                </div>
+                
+                <div class="project">
+                    <h3>KAMX-ASSIST</h3>
+                    <p>Asistente con memoria, capaz de responder preguntas, buscar información de maera autónoma, entender y generar imágenes. Estado: pruebas finales de aplicación para Android.</p>
+                </div>
+            </div>
+            
+            <div id="proposals" class="tab-content">
+                <div class="project">
+                    <h3>Sistema Experimental de Generación de Texto con Redes Neuronales Líquidas</h3>
+                    <p>Desarrollo de un marco experimental para la síntesis de lenguaje natural mediante arquitecturas adaptativas de redes neuronales líquidas. Este proyecto evalúa la capacidad de sistemas dinámicos para modelar estructuras lingüísticas complejas.</p>
+                </div>
+                
+                <div class="project">
+                    <h3>Evolución de Redes Neuronales mediante Algoritmos Genéticos</h3>
+                    <p>Análisis, diseño e implementación de métodos evolutivos para la optimización autónoma de topologías neuronales en sistemas cognitivos artificiales con capacidades emergentes.</p>
+                </div>
+                
+                <div class="project">
+                    <h3>Ecología virtual: Optimización autónoma de IA</h3>
+                    <p>Modelado de ecosistemas artificiales donde agentes heterogéneos compiten y/o cooperan por recursos computacionales. Estudia el desarrollo de homeostasis en sistemas inteligentes multi-especie.</p>
+                </div>
+            </div>                                    
+        </section>
+        
+        <section class="contact">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="M22 7l-10 7L2 7" />
+                    </svg>
+                    <span id="email-ph">Contact Me</span>
+                </div>
+                <div class="contact-method">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/>
+                        <path d="M12 12a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                        <path d="M12 12v4"/>
+                        <path d="M12 12v-4"/>
+                    </svg>
+                    <span>19.4326° N, -99.13320° W</span>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            Aconoya Labs © 2025
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Subtle animation for the page load
+            setTimeout(() => {
+                document.querySelector('.mission').style.opacity = '1';
+            }, 300);
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailParts = {
+                usr: 'aconoya.ai',
+                domn: 'gmail.com'
+            };
+            const element = document.getElementById('email-ph');
+            element.innerHTML = `<a href="mailto:${emailParts.usr}@${emailParts.domn}">${emailParts.usr}@${emailParts.domn}</a>`;
+        });
+    </script>
+    
+</body>
+</html>
